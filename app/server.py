@@ -61,12 +61,8 @@ async def analyze(request):
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
-    if prediction == 1
-        return JSONResponse({"Cultivated"})
-    elif prediction == 2
-        return JSONResponse({"Aerable"})
-    elif prediction == 3
-        return JSONResponse({"Primary"})
+    return JSONResponse({"result:"+string(prediction)})
+    
 
 
 if __name__ == '__main__':
